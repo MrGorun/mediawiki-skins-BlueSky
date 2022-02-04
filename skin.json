@@ -35,7 +35,13 @@
 		}
 	},
 	"ThemeModules": {
-		"bluesky": [ "blue", "red", "green", "white", "grey" ]
+		"bluesky": [
+			"blue",
+			"red",
+			"green",
+			"white",
+			"grey"
+		]
 	},
 	"MessagesDirs": {
 		"SkinBlueSky": [
@@ -52,14 +58,24 @@
 	},
 	"ResourceModules": {
 		"skins.bluesky": {
-			"targets": [ "desktop", "mobile" ],
 			"class": "ResourceLoaderSkinModule",
 			"features": {
 				"content-links": true,
-				"logo": true,
-				"legacy": true
+				"normalize": true,
+				"elements": true,
+				"content-media": true,
+				"logo": false,
+				"interface": true,
+				"legacy": false
 			},
+			"targets": [
+				"desktop",
+				"mobile"
+			],
 			"styles": {
+				"resources/vendor/bootstrap/css/bootstrap.min.css": {
+					"media": "screen"
+				},
 				"resources/libraries/normalise.css": {
 					"media": "screen"
 				},
@@ -69,7 +85,9 @@
 			}
 		},
 		"skins.bluesky.js": {
-			"targets": [ "desktop" ],
+			"targets": [
+				"desktop"
+			],
 			"scripts": [
 				"resources/main.js"
 			]
