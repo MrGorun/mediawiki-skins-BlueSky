@@ -73,6 +73,9 @@
 				"mobile"
 			],
 			"styles": {
+				"resources/vendor/font-awesome/css/all.min.css": {
+					"media": "screen"
+				},
 				"resources/vendor/bootstrap/css/bootstrap.min.css": {
 					"media": "screen"
 				},

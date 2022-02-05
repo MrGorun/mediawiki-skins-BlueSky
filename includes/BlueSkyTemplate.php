@@ -43,17 +43,24 @@ class BlueSkyTemplate extends BaseTemplate {
 
 		// Variables out of the way; open html, body elements, etc
 		$html = $this->get( 'headelement' );
-		$html .= Html::openElement( 'div', [ 'id' => 'mw-wrapper' ] );
-
+		$html .= Html::openElement( 'div', [ 'class' => 'site-wrapper clearfix' ] );
+		$html .= Html::rawElement( 'div', [ 'class' => 'site-overlay' ]);
 		// Page header
-		$html .= Html::rawElement( 'div', [ 'id' => 'header-outer' ],
-			Html::rawElement( 'div', [ 'class' => 'wrapper-inner', 'id' => 'header-inner' ],
+		$html .= Html::rawElement( 'header', [ 'class' => 'header header--layout-2' ],
+			Html::rawElement( 'div', [ 'class' => 'header__secondary' ],
+			Html::rawElement( 'div', [ 'class' => 'container' ],
+
 				// Logo block
-				$this->getBanner() .
+				// $this->getBanner() .
+
+				Html::rawElement( 'div', [ 'class' => 'header-search-form' ],
+
 				$this->getSearch() .
 				// funky tabs
 				$this->getMiscNavigation( 'sidebar', 2, true ) .
 				$this->getClear()
+			)
+			)
 			)
 		);
 
